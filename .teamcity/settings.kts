@@ -75,6 +75,7 @@ object Build : BuildType({
             branchFilter = "+:main"
         }
         schedule {
+            enabled = false
             schedulingPolicy = weekly {
             }
             triggerBuild = always()
