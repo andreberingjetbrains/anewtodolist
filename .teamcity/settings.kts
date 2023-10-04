@@ -66,6 +66,7 @@ object Build : BuildType({
         }
         script {
             name = "qqq"
+            enabled = false
             scriptContent = "docker run --rm -v ${'$'}PWD:/workdir jetbrains/intellij-http-client -D run.http --report"
         }
     }
