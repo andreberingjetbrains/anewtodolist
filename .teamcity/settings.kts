@@ -72,6 +72,7 @@ object Build : BuildType({
 
     triggers {
         vcs {
+            branchFilter = "+:main"
         }
         schedule {
             schedulingPolicy = weekly {
