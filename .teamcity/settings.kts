@@ -1,8 +1,11 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.CustomChart
+import jetbrains.buildServer.configs.kotlin.CustomChart.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.XmlReport
 import jetbrains.buildServer.configs.kotlin.buildFeatures.xmlReport
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.projectCustomChart
 import jetbrains.buildServer.configs.kotlin.triggers.schedule
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -34,6 +37,18 @@ project {
 
     buildType(Blahblah)
     buildType(Build)
+
+    features {
+        projectCustomChart {
+            id = "PROJECT_EXT_2"
+            title = "Build time"
+            seriesTitle = "Serie"
+            format = CustomChart.Format.TEXT
+            series = listOf(
+                Serie(title = "Build Duration (excluding Checkout Time)", key = SeriesKey.BUILD_STEPS_DURATION, sourceBuildTypeId = "Anewtodolist_Build")
+            )
+        }
+    }
 }
 
 object Blahblah : BuildType({
