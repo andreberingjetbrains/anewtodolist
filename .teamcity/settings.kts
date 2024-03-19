@@ -90,9 +90,11 @@ object Build : BuildType({
             branchFilter = "+:main"
         }
         schedule {
-            enabled = false
-            schedulingPolicy = weekly {
+            enabled = true
+            schedulingPolicy = daily {
+                hour = 15
             }
+            branchFilter = ""
             triggerBuild = always()
         }
     }
