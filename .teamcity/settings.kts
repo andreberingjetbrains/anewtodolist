@@ -86,13 +86,10 @@ object Build : BuildType({
     }
 
     triggers {
-        vcs {
-            branchFilter = "+:main"
-        }
         schedule {
             enabled = true
             schedulingPolicy = daily {
-                hour = 14
+                hour = 15
             }
             branchFilter = ""
             triggerBuild = always()
