@@ -89,10 +89,9 @@ object Build : BuildType({
         schedule {
             enabled = true
             schedulingPolicy = daily {
-                hour = 15
+                hour = 16
             }
             branchFilter = ""
-            withPendingChangesOnly = false
             triggerBuild = always()
         }
     }
