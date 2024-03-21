@@ -92,6 +92,7 @@ object Build : BuildType({
                 hour = 15
             }
             branchFilter = ""
+            withPendingChangesOnly = false
             triggerBuild = always()
         }
     }
